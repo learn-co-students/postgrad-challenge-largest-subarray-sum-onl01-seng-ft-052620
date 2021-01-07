@@ -1,0 +1,25 @@
+"use strict";
+
+var largestSubarraySum = function largestSubarraySum(array) {
+    var a = [];
+    var latestLargestSum = 0;
+    var start = 0;
+    var end = 0;
+
+    for (var i = 0; i < array.length; i++) {
+        var currentLargestSum = 0;
+        for (var y = i; y < array.length; y++) {
+            currentLargestSum += array[y];
+            if (currentLargestSum > latestLargestSum) {
+                latestLargestSum = currentLargestSum;
+                start = i;
+                end = y;
+            }
+        }
+    }
+
+    for (var x = start; x <= end; x++) {
+        a.push(x);
+    }
+    debugger;
+};
